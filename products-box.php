@@ -3,7 +3,7 @@
 /**
  * Plugin Name: CQ Products Box
  * Plugin URI: https://kelassor.blog.ir/wp-plugins
- * Description: ⪜ CQFlooring Products Box :  use [cq-show-card slug=cat1,cat2,cat3] in post or page
+ * Description: CQFlooring Products Box :  use [cq-show-card slug=cat1,cat2,cat3] in post or page
  * Version: 1
  * Text Domain: CQ-products-box
  * Author: Masood Vahid

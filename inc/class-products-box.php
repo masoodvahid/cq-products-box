@@ -12,7 +12,7 @@ if (!class_exists('ProductsBox')) :
         {
             add_shortcode('cq-show-card', [$this, 'show_card']);
             add_shortcode('cq-show-slide', [$this, 'show_slide']); 
-            add_action( 'woocommerce_after_single_product' , [$this,'show_under_single_product'], 5 );
+            add_action( 'cq_products_box_slideshow' , [$this,'show_under_single_product'], 5 );
         }
 
         public static function get_categories($input = false){                    
@@ -54,7 +54,7 @@ if (!class_exists('ProductsBox')) :
             $current_product_category_details = get_the_terms ( $product->id, 'product_cat' );
             $input['slug'] = $current_product_category_details[0]->slug;
             $results = self::get_categories($input);            
-            require_once(PRODUCTS_INLINE_DIR . 'views/products-box-card-view.php');             
+            require_once(PRODUCTS_INLINE_DIR . 'views/products-box-slideshow-view.php');             
         }
     }
     $pi = new ProductsBox;    
