@@ -4,7 +4,7 @@
  * Plugin Name: CQ Products Box
  * Plugin URI: https://kelassor.blog.ir/wp-plugins
  * Description: ⪜ CQFlooring Products Box :  use [cq-show-card slug=cat1,cat2,cat3] in post or page
- * Version: 0.2.0
+ * Version: 1
  * Text Domain: CQ-products-box
  * Author: Masood Vahid
  * Author URI: https://kelassor.blog.ir
@@ -12,6 +12,8 @@
  * Requires PHP:      7.2
  * WC requires at least: 4.5
  * WC tested up to: 5.0
+ * GitHub Plugin URI: masoodvahid/cq-products-box
+ * GitHub Plugin URI: https://github.com/masoodvahid/cq-products-box
  */
 
 if (!defined('WPINC')) {
