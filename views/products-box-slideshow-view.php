@@ -30,8 +30,8 @@ foreach($results as $result){
                                 $attribute = $product->get_attributes();
                                 // print_r($attribute);
                                 $dimensions = false;
-                                if($attribute['length']['options'][0] && $attribute['height']['options'][0] && $attribute['thickness']['options'][0]){
-                                    $dimensions = "<h3>Dimensions:</h3>".$attribute['length']['options'][0]." x ".$attribute['height']['options'][0]." x ".$attribute['thickness']['options'][0];
+                                if($attribute['length']['options'][0] && $attribute['width']['options'][0] && $attribute['thickness']['options'][0]){
+                                    $dimensions = "<h3>Dimensions:</h3>".$attribute['length']['options'][0]." x ".$attribute['width']['options'][0]." x ".$attribute['thickness']['options'][0];
                                 }
                                 
                                 ?>                                
