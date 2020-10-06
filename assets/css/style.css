@@ -41,3 +41,13 @@
     -moz-border-radius: 3px;
     border-radius: 3px;
 }
+
+.box-image-holder {
+	height: 360px;
+}
+
+.watermark-so, .watermark {
+	height: 360px;
+	position: absolute;
+	right: 0;
+}

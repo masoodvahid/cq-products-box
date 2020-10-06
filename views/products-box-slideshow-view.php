@@ -11,16 +11,23 @@ foreach($results as $result){
                 id="box-image-holder" 
                 style="background-image: url('<?php if($result->products[0]){ echo wp_get_attachment_url( $result->products[0]->get_image_id() );} ?>"')">
             <a id="box-image-holder-link" href="<?php echo get_permalink($result->products[0]->get_id() ); ?>">
-                <img class="watermark" src="<?php echo plugin_dir_url( dirname( __FILE__ ) ) . 'assets/img/watermark.png'; ?>" >
-                <img class="watermark-so" src="<?php echo plugin_dir_url( dirname( __FILE__ ) ) . 'assets/img/watermark-so.png'; ?>" style="display: none;">
+                <img class="watermark-so" src="<?php echo plugin_dir_url( dirname( __FILE__ ) ) . 'assets/img/watermark-so.png' ?>" <?php if(!$result->products[0]->sale_price){ echo "style='display: none;'"; }  ?> >
+                <img class="watermark" src="<?php echo plugin_dir_url( dirname( __FILE__ ) ) . 'assets/img/watermark.png'; ?>" <?php if($result->products[0]->sale_price){ echo "style='display: none;'"; } ?> >
             </a>                    
             </div>                
             <div class='col-12 col-md-6 d-flex p-4'>
                 <div class='card-block  px-2'>                        
-                    <a class="card-box-title text-danger" href="<?php echo site_url($result->link.$result->slug); ?>"><?php echo $result->name ?> </a>
-                        <!-- <span class='badge badge-primary  align-top'><?php echo $result->count; ?></span>                       -->
-                        <h1 class="card-title pt-2" id="card-title"></h1>
-                        <div class="card-price"><span class="text-danger" id="card-sale-price"></span> <span id="card-price"></span></div>
+                    <a class="card-box-title text-danger" href="<?php echo site_url($result->link.$result->slug); ?>"><?php echo $result->name ?> </a>                        
+                        <h1 class="card-title pt-2" id="card-title"><?php echo $result->products[0]->name;?></h1>                        
+                        <div class="card-price">
+                        <?php if($result->products[0]->sale_price){ ?>
+                            <span class="text-danger" id="card-sale-price"><?php echo $result->products[0]->sale_price;?></span> 
+                            <span id="card-price" class="card-text-line-through"><?php echo $result->products[0]->regular_price;?></span>
+                        <?php }else{ ?>
+                            <span class="text-danger" id="card-sale-price"></span> 
+                            <span id="card-price"><?php echo $result->products[0]->price;?></span>
+                        <?php } ?>
+                        </div>
                     <div class="py-2">
                     <?php 
                     
